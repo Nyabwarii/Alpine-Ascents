@@ -1,0 +1,214 @@
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f6c8d;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* HERO CARD */
+.hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  background: url("/Images/Mountain Climb.jpg") center/cover no-repeat;
+}
+
+/* DARK OVERLAY (keeps image sharp) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* darkens instead of blurring */
+}
+
+/* NAVBAR */
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.contact-btn {
+  border: 1px solid white;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* RESPONSIVE NAVIGATION */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 3;
+  }
+
+  nav.active {
+    max-height: 300px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  .home-content h1 {
+    white-space: normal;
+    font-size: 32px;
+  }
+
+  .home-content p {
+    white-space: normal;
+  }
+}
+
+/* HOME TEXT */
+.home-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 30px;
+  max-width: 500px;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-content h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
+
+.home-content p {
+  font-size: 19px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+/* BUTTON */
+.explore-button {
+  background: #8b2c2c;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #062a3a;
+  color: white;
+  padding: 50px 30px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand h3,
+.footer-contact h4,
+.footer-social h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.footer-brand p,
+.footer-contact p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.footer-social a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
