@@ -4,57 +4,175 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpine Ascents</title>
+
   <link rel="stylesheet" href="Alpine-Ascents.css">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-  <section class="hero">
-
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
 
     <header class="navbar">
       <div class="logo">Alpine Ascents</div>
+
       <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-      <nav>
+
+      <nav id="nav-menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Testimony</a></li>
-          <li><a href="#">Book with us</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#explore">Explore</a></li>
+          <li><a href="#" id="aboutBtn">About Us</a></li>
+          <li><a href="#" id="testimonyBtn">Testimony</a></li>
+          <li><a href="#book">Book with us</a></li>
         </ul>
       </nav>
-      <button class="contact-btn">Contact Us</button>
+
+      <button class="contact-btn" onclick="document.getElementById('contact-footer').scrollIntoView({behavior:'smooth'})">
+        Contact Us
+      </button>
     </header>
 
-    <!-- Home Page Content -->
     <div class="home-content">
       <h1>Discover the Thrill of Mountain<br> Hiking with Alpine Ascents</h1>
       <p>Your gateway to unforgettable adventures and breathtaking landscapes.</p>
-      <button class="explore-button">Explore Now</button>
+      <button class="explore-button" onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">
+        Explore Now
+      </button>
     </div>
 
   </section>
 
-  <!-- Footer -->
+  <!-- SECTIONS -->
+  <section id="explore"></section>
+  <section id="book"></section>
+
+  <!-- ABOUT US MODAL -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+
+      <h2>Elevating the Human Spirit: About Alpine Ascents</h2>
+
+      <div class="about-block">
+        <h3>Our Story</h3>
+        <p>
+          What began in 1986 as a small group of passionate climbers has evolved into a global leader in mountaineering and wilderness education. Alpine Ascents was founded on a simple but powerful belief: that the mountains offer a unique stage for personal growth, resilience, and unparalleled discovery.
+        </p>
+        <p>
+          Based in the Pacific Northwest, we have spent decades bridging the gap between aspiring trekkers and the world's most formidable peaks.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <h3>The AAI Philosophy</h3>
+        <p><strong>Safety Through Education:</strong> We build informed climbers through training and experience.</p>
+        <p><strong>Elite Leadership:</strong> World-class guides ensure safety and excellence.</p>
+        <p><strong>Environmental Stewardship:</strong> We follow Leave No Trace principles.</p>
+      </div>
+
+      <div class="about-block">
+        <h3>Why We Climb</h3>
+        <p>
+          Climbing is not just about reaching the summit — it's about growth, discipline, and perspective.
+        </p>
+        <p class="closing-line">
+          <em>The mountains are calling. Let's go together.</em>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TESTIMONY MODAL -->
+  <div id="testimonyModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+
+      <h2>What Our Climbers Say</h2>
+
+      <div class="testimony-grid">
+
+        <div class="testimony-card">
+          <h3>Mark Stevens <span>(USA)</span></h3>
+          <p>"The 6-day course on Mt. Rainier was a game-changer. I came in with zero glacier experience and left feeling like a real mountaineer. The guides were incredibly patient."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>Elena Rossi <span>(Italy)</span></h3>
+          <p>"Climbing Kilimanjaro with this team was seamless. The logistics were perfect, and the focus on our health and acclimatization made all the difference in reaching the summit."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>David Chen <span>(Singapore)</span></h3>
+          <p>"I've joined several expeditions, but the leadership here is unmatched. They don't just lead you up a hill; they teach you the 'why' behind every decision."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>Sarah Jenkins <span>(UK)</span></h3>
+          <p>"As a solo female climber, I felt completely supported and empowered. The gear department helped me dial in my kit perfectly before I even landed in Nepal."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>Javier Mendez <span>(Mexico)</span></h3>
+          <p>"The Aconcagua expedition was the hardest thing I've ever done. Our guide's calm demeanor during the summit push kept the whole team focused and safe."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>Aiko Tanaka <span>(Japan)</span></h3>
+          <p>"The Seven Summits dream felt impossible until I started training with Alpine Ascents. Their mentorship program truly prepares you for the world's highest peaks."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>Liam O'Connor <span>(Ireland)</span></h3>
+          <p>"Unbelievable experience in the North Cascades. The ratio of guides to climbers is fantastic, ensuring everyone gets the personal attention they need to succeed."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>Priya Sharma <span>(India)</span></h3>
+          <p>"What struck me most was their respect for local cultures and the environment. It's clear they care deeply about the mountains, not just the summits."</p>
+        </div>
+
+        <div class="testimony-card">
+          <h3>Thomas Mueller <span>(Germany)</span></h3>
+          <p>"Top-notch professionalism from start to finish. The pre-trip communication was thorough, leaving no questions unanswered before my flight to Denali."</p>
+        </div>
+
+      
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer id="contact-footer">
     <div class="footer-content">
+
       <div class="footer-brand">
         <h3>Alpine Ascents</h3>
         <p>Your gateway to unforgettable mountain adventures.</p>
       </div>
+
       <div class="footer-contact">
         <h4>Contact Us</h4>
         <p>Email: info@alpineascents.com</p>
         <p>Phone: +1 (555) 123-4567</p>
         <p>Address: 123 Mountain View Rd, Denver, CO</p>
       </div>
+
       <div class="footer-social">
         <h4>Follow Us</h4>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
       </div>
+
     </div>
+
     <div class="footer-bottom">
       <p>&copy; 2024 Alpine Ascents. All rights reserved.</p>
     </div>
