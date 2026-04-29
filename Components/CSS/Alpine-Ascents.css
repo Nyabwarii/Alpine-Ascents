@@ -1,0 +1,345 @@
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f6c8d;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HERO CARD */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  background: url("/Images/Mountain Climb.jpg") center/cover no-repeat;
+}
+
+/* DARK OVERLAY (keeps image sharp) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* NAVBAR */
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.contact-btn {
+  border: 1px solid white;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* RESPONSIVE NAVIGATION */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 3;
+  }
+
+  nav.active {
+    max-height: 300px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  .home-content h1 {
+    white-space: normal;
+    font-size: 32px;
+  }
+
+  .home-content p {
+    white-space: normal;
+  }
+}
+
+/* HOME TEXT */
+.home-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 30px;
+  max-width: 500px;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-content h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
+
+.home-content p {
+  font-size: 19px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+/* BUTTON */
+.explore-button {
+  background: #8b2c2c;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #0e4963;
+  color: white;
+  padding: 50px 30px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand h3,
+.footer-contact h4,
+.footer-social h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.footer-brand p,
+.footer-contact p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #8b2c2c;
+  transform: translateY(-4px);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAV ACTIVE FOR MOBILE TOGGLE */
+nav {
+  transition: max-height 0.3s ease;
+}
+
+#about {
+  padding: 80px 30px;
+  background: #f5f7fa;
+  color: #1a1a1a;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+#about h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #0f6c8d;
+}
+
+.about-block {
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.about-block h3 {
+  margin-bottom: 15px;
+  color: #0f6c8d;
+  font-size: 20px;
+}
+
+.about-block p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.closing-line {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #f5f7fa;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 750px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #8b2c2c;
+}
+
+/* TESTIMONY MODAL */
+#testimonyModal .modal-content {
+  max-width: 900px;
+}
+
+.testimony-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.testimony-card {
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.testimony-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimony-card h3 {
+  font-size: 16px;
+  color: #0f6c8d;
+  margin-bottom: 10px;
+}
+
+.testimony-card h3 span {
+  font-size: 13px;
+  color: gray;
+  font-weight: normal;
+}
+
+.testimony-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
